@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./node_modules/survey-core/survey-core.css" />
+    <link rel="stylesheet" href="./node_modules/survey-creator-core/survey-creator-core.min.css" />
+</head>
+
+<body>
+    <div id="creatorElement" style="height: 100vh;"></div>
+
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="./node_modules/survey-core/survey.core.js"></script>
+    <script src="./build/survey-react-ui.js"></script>
+    <script src="./node_modules/survey-creator-core/survey-creator-core.min.js"></script>
+    <script src="./node_modules/survey-creator-react/survey-creator-react.min.js"></script>
+    <script>
+      (function () {
+        // Apply provided license key
+        if (window.Survey && typeof window.Survey.setLicenseKey === 'function') {
+          window.Survey.setLicenseKey('ZG9tYWluczpleGFtcGxlLmNvbTsxPTIwOTktMDEtMDE=');
+        }
+        var options = { 
+          showLogicTab: true,
+          showJSONEditorTab: true
+        };
+        var creator = new SurveyCreator.SurveyCreator(options);
+        creator.JSON = { title: "New survey", pages: [{ name: "page1" }] };
+        var el = document.getElementById("creatorElement");
+        ReactDOM.render(React.createElement(SurveyCreator.SurveyCreatorComponent, { creator: creator }), el);
+      })();
+    </script>
+</body>
+
+</html>
+
+

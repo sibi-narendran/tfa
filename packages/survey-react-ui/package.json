@@ -49,6 +49,8 @@
         "@types/react-test-renderer": "^17.0.1",
         "@typescript-eslint/eslint-plugin": "^7.2.0",
         "@typescript-eslint/parser": "^7.2.0",
+        "ajv": "^8.12.0",
+        "ajv-keywords": "^5.1.0",
         "commit-and-tag-version": "^11.0.0",
         "concurrently": "^5.3.0",
         "cross-env": "^7.0.3",
@@ -86,5 +88,9 @@
         "bumpFiles": [
             "package.json"
         ]
+    },
+    "dependencies": {
+        "survey-creator-core": "~2.3.11",
+        "survey-creator-react": "~2.3.11"
     }
 }
